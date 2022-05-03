@@ -39,7 +39,30 @@ export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
 
 //Game Details
-export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${KEY}`;
+/**
+ * It takes a game_id as an argument and returns a URL that can be used to fetch game details from the
+ * IGDB API
+ * @param game_id - The ID of the game you want to get details for.
+ */
+export const gameDetailsURL = (game_id) =>
+  `${base_url}games/${game_id}?key=${KEY}`;
 //Screenshots
+/**
+ * This function takes a game_id as an argument and returns a URL that can be used to fetch screenshots
+ * for that game.
+ * @param game_id - The ID of the game you want to get the screenshots for.
+ */
 export const gameScreenShotURL = (game_id) =>
   `${base_url}games/${game_id}/screenshots?key=${KEY}`;
+
+/**
+ * This function takes a game name as an argument and returns a URL that can be used to search for that
+ * game.
+ * @param game_name - The name of the game you want to search for.
+ */
+export const searchGameURL = (game_name) => {
+  console.log('====================================');
+  console.log(game_name);
+  console.log('====================================');
+  return `${base_url}games?search=${game_name}&page_size=9&key=${KEY}`;
+};
